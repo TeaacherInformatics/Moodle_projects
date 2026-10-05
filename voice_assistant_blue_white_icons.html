@@ -34,6 +34,149 @@ ul,ol{padding-left:1.35rem}li{margin:.38rem 0}strong{color:#103d7d}.callout{bord
 
 .ui-icon{width:22px;height:22px;display:inline-block;vertical-align:-5px;margin-right:9px;color:#1677ff;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.ico .ui-icon{width:28px;height:28px;margin:0;color:#1677ff;vertical-align:middle}.btn .ui-icon{width:18px;height:18px;margin-right:7px;color:currentColor;vertical-align:-4px}.icon-chip{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(145deg,#eef6ff,#fff);border:1px solid rgba(22,119,255,.18);box-shadow:0 5px 14px rgba(22,119,255,.08);margin-right:10px;vertical-align:middle}.icon-chip .ui-icon{margin:0;width:19px;height:19px}
 .supervisor-card{margin:24px auto 0;max-width:650px;display:flex;align-items:center;gap:16px;text-align:left;padding:14px 18px;border:1px solid rgba(37,99,235,.2);border-radius:20px;background:rgba(255,255,255,.82);box-shadow:0 16px 40px rgba(30,64,175,.1);backdrop-filter:blur(16px)}.supervisor-icon{width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,#e0f2fe,#dbeafe);border:1px solid rgba(37,99,235,.15);color:#2563eb}.supervisor-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.supervisor-meta{min-width:0}.supervisor-label{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0ea5e9;margin-bottom:3px}.supervisor-name{font-size:18px;font-weight:800;color:#0b1f44;line-height:1.3}.supervisor-role{font-size:13px;color:#6b82a8;margin-top:2px}@media(max-width:560px){.supervisor-card{align-items:flex-start}.supervisor-name{font-size:16px}}
+
+/* Hero alignment + responsive mobile layout */
+.hero h1{width:100%;text-align:center}
+.hero-main,.hero-sub{display:block;width:100%;text-align:center}
+.hero-sub{letter-spacing:-.045em}
+@media(max-width:800px){
+  .wrap{width:min(100% - 28px,1160px)}
+  .hero{padding:52px 0 30px;min-height:auto}
+  .hero-inner{width:100%;max-width:100%}
+  .eyebrow{font-size:10px;letter-spacing:.09em;padding:7px 11px;max-width:100%}
+  .hero h1{font-size:clamp(34px,9.6vw,58px);line-height:1.08;letter-spacing:-.055em;margin:20px auto 16px;overflow-wrap:normal;word-break:normal}
+  .hero-main{font-size:.92em;line-height:1.12;margin-bottom:10px}
+  .hero-sub{font-size:.78em;line-height:1.14;letter-spacing:-.055em}
+  .lead{font-size:16px;line-height:1.65;max-width:94%}
+  section{padding:34px 0}
+  .card{padding:20px;border-radius:20px}
+  .section-head{display:block;margin-bottom:18px}
+  h2{font-size:clamp(24px,7vw,34px)}
+  .footer-card{padding:24px;margin:32px 0 45px;border-radius:24px}
+  .supervisor-card{max-width:94%;padding:13px 14px;gap:12px;border-radius:17px}
+  .supervisor-icon{width:46px;height:46px;flex-basis:46px;border-radius:13px}
+  .supervisor-icon svg{width:25px;height:25px}
+}
+@media(max-width:480px){
+  .wrap{width:calc(100% - 22px)}
+  .hero{padding-top:38px}
+  .hero h1{font-size:clamp(30px,9.2vw,44px);line-height:1.08;margin-top:18px}
+  .hero-main{font-size:.86em;margin-bottom:9px}
+  .hero-sub{font-size:.70em;line-height:1.18;letter-spacing:-.045em}
+  .lead{font-size:15px;line-height:1.58;max-width:100%}
+  .eyebrow{font-size:9px;gap:7px}
+  .dot{width:6px;height:6px}
+  .supervisor-card{max-width:100%;margin-top:20px}
+  .supervisor-label{font-size:9px;letter-spacing:.1em}
+  .supervisor-name{font-size:15px}
+  .feature{gap:12px}
+  .feature .badge{flex-basis:38px;height:38px;border-radius:12px}
+  .chips{gap:7px}.chip{font-size:12px;padding:7px 9px}
+}
+
+
+
+
+
+/* v7: fullscreen-safe and mobile-safe hero title */
+.hero h1{
+  text-align:center;
+  max-width:100%;
+  overflow:visible;
+}
+
+.hero h1 .grad{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  line-height:1.04;
+}
+
+.hero h1 .hero-personalized{
+  font-size:clamp(42px, 5.7vw, 82px);
+}
+
+.hero h1 .hero-assistant{
+  font-size:clamp(42px, 5.7vw, 82px);
+  white-space:normal;
+}
+
+@media (max-width:900px){
+  .hero h1 .hero-personalized,
+  .hero h1 .hero-assistant{
+    font-size:clamp(34px, 7.5vw, 62px);
+  }
+}
+
+@media (max-width:560px){
+  .hero h1 .hero-personalized,
+  .hero h1 .hero-assistant{
+    font-size:clamp(28px, 10vw, 46px);
+    overflow-wrap:anywhere;
+  }
+}
+
+
+/* v8 — final hero sizing: guaranteed to fit fullscreen */
+.hero-inner{
+  width:100%;
+  max-width:1160px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero h1{
+  width:100%;
+  max-width:100%;
+  text-align:center;
+  overflow:visible;
+}
+.hero-main,
+.hero-personalized,
+.hero-assistant{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+.hero h1 .hero-personalized{
+  font-size:clamp(34px,4.35vw,64px) !important;
+  line-height:1.08;
+  letter-spacing:-0.055em;
+  white-space:nowrap;
+}
+.hero h1 .hero-assistant{
+  font-size:clamp(34px,4.8vw,68px) !important;
+  line-height:1.08;
+  letter-spacing:-0.05em;
+  white-space:nowrap;
+}
+
+@media (max-width:700px){
+  .hero h1 .hero-personalized{
+    font-size:clamp(25px,7.2vw,42px) !important;
+    letter-spacing:-0.05em;
+    white-space:nowrap;
+  }
+  .hero h1 .hero-assistant{
+    font-size:clamp(27px,8.2vw,44px) !important;
+    white-space:normal;
+  }
+}
+
+@media (max-width:420px){
+  .hero h1 .hero-personalized{
+    font-size:clamp(22px,6.8vw,30px) !important;
+  }
+  .hero h1 .hero-assistant{
+    font-size:clamp(25px,8vw,34px) !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -41,9 +184,9 @@ ul,ol{padding-left:1.35rem}li{margin:.38rem 0}strong{color:#103d7d}.callout{bord
 <main>
 <header class="hero"><div class="wrap hero-inner reveal">
 <div class="eyebrow"><span class="dot"></span> индивидуальный проект · Python</div>
-<h1>Голос вместо клавиатуры:<br><span class="grad">персонализированный голосовой помощник</span></h1>
+<h1><span class="hero-main">Голос вместо клавиатуры:</span><span class="grad hero-personalized">персонализированный</span><span class="grad hero-sub hero-assistant">голосовой помощник</span></h1>
 <p class="lead">Практико-ориентированная проектная работа по разработке программного продукта на языке <strong>Python</strong> с использованием технологий распознавания речи, обработки голосовых команд, получения данных из сети Интернет и воспроизведения ответов собственным голосом автора.</p>
-<div class="supervisor-card"><div class="supervisor-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 5l9 5.5L12 16 3 10.5Z"/><path d="M7 13v4.2c2.7 2.1 7.3 2.1 10 0V13"/><path d="M21 10.5V16"/><circle cx="21" cy="17.5" r="1"/></svg></div><div class="supervisor-meta"><div class="supervisor-label">Руководитель проекта</div><div class="supervisor-name">Давыдов Алексей Евгеньевич</div><div class="supervisor-role">Учитель · сопровождение индивидуального проекта</div></div></div>
+<div class="supervisor-card"><div class="supervisor-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 5l9 5.5L12 16 3 10.5Z"/><path d="M7 13v4.2c2.7 2.1 7.3 2.1 10 0V13"/><path d="M21 10.5V16"/><circle cx="21" cy="17.5" r="1"/></svg></div><div class="supervisor-meta"><div class="supervisor-label">Руководитель проекта</div><div class="supervisor-name">Давыдов Алексей Евгеньевич</div></div></div>
 <div class="hero-actions"><a class="btn primary" href="https://disk.360.yandex.ru/i/mknmWMegC1hIWA" target="_blank" rel="noopener noreferrer"><svg class="ui-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4V8Z"/></svg>Посмотреть пример реализации</a><a class="btn secondary" href="#project">Перейти к заданию ↓</a></div>
 <div class="sound-pill" aria-hidden="true"> <i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
 </div></header>
